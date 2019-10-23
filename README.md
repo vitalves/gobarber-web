@@ -1,2 +1,1 @@
-# GoBarber!
-# gobarber-web
+# GoBarber
