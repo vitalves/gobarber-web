@@ -13,7 +13,7 @@ export default function RouteWrapper({
   isPrivate, // páginas que exigem login (false no defaultProps)
   ...rest // todas as demais propriedades
 }) {
-  const signed = true; // se o usuario esta logado
+  const signed = false; // se o usuario esta logado
 
   // Se nao estiver logado e a rota for privada
   if (!signed && isPrivate) {
