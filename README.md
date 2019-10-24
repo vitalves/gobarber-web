@@ -20,3 +20,7 @@
 ## Reactotron para debug:
 
 `yarn add reactotron-react-js`
+
+## Validação de propriedades:
+
+`yarn add prop-types`
