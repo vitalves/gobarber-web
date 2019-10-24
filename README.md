@@ -16,3 +16,7 @@
 ## Navegação entre telas:
 
 `yarn add history`
+
+## Reactotron para debug:
+
+`yarn add reactotron-react-js`
