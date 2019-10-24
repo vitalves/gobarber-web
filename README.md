@@ -24,3 +24,7 @@
 ## Validação de propriedades:
 
 `yarn add prop-types`
+
+## Estilização com Styled Components
+
+`yarn add styled-components`
