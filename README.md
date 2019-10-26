@@ -59,3 +59,8 @@ settings: {
 ```
 Para o VsCode encontrar o arquivo:
 Criar o arquivo _'jsconfig.json'_
+
+
+## Trabalhar com cores:
+
+`yarn add polished`
