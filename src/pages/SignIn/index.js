@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import logo from '~/assets/logo.svg';
 
 // Os estilos de SignIn e SignUp sao os mesmos, ficam na _layout > auth
-// import { Container } from './styles';
 
 export default function SignIn() {
   return (
