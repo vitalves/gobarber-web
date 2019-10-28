@@ -69,4 +69,6 @@ Criar o arquivo _'jsconfig.json'_
 
 `yarn add @rocketseat/unform`
 
+## Validação de dados com Yup
 
+`yarn add yup`
