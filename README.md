@@ -78,3 +78,7 @@ Criar o arquivo _'jsconfig.json'_
 ### Configurando o store
 
 `yarn add redux redux-saga react-redux reactotron-redux reactotron-redux-saga immer`
+
+## Acessando a API com o Axios:
+
+`yarn add axios`
