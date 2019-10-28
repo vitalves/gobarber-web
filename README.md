@@ -72,3 +72,9 @@ Criar o arquivo _'jsconfig.json'_
 ## Validação de dados com Yup
 
 `yarn add yup`
+
+## Redux
+
+### Configurando o store
+
+`yarn add redux redux-saga react-redux reactotron-redux reactotron-redux-saga immer`
