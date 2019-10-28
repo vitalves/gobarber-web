@@ -64,3 +64,9 @@ Criar o arquivo _'jsconfig.json'_
 ## Trabalhar com cores:
 
 `yarn add polished`
+
+## Pegando as informações do input (Utilizando Unform)
+
+`yarn add @rocketseat/unform`
+
+
