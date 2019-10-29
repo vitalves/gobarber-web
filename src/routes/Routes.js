@@ -7,13 +7,18 @@ import { Route, Redirect } from 'react-router-dom';
 import AuthLayout from '~/pages/_layouts/auth';
 import DefaultLayout from '~/pages/_layouts/default';
 
+// Redux
+import store from '~/store';
+
 export default function RouteWrapper({
   // PROPRIEDADES: path, exact, component...
   component: Component, // C para usá-lo como componente
   isPrivate, // páginas que exigem login (false no defaultProps)
   ...rest // todas as demais propriedades
 }) {
-  const signed = false; // se o usuario esta logado
+  // const signed = false; // se o usuario esta logado // testes
+  // const signed = store.getState().auth.signed; // sem a desestruturacao
+  const { signed } = store.getState().auth; // com a desestruturacao
 
   // Se nao estiver logado e a rota for privada
   if (!signed && isPrivate) {

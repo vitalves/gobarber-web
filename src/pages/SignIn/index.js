@@ -16,7 +16,6 @@ import logo from '~/assets/logo.svg';
 // schema de validação do Yup:
 const schema = Yup.object().shape({
   email: Yup.string()
-    .trim()
     .email('O email informado é inválido')
     .required('O email é obrigatório'),
   password: Yup.string()
