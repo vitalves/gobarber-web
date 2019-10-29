@@ -1,4 +1,5 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects';
+import { toast } from 'react-toastify'; // notificações
 
 import history from '~/services/history';
 import api from '~/services/api';
@@ -18,7 +19,11 @@ export function* signIn({ payload }) {
     const { token, user } = response.data;
 
     if (!user.provider) {
-      console.tron.warn('Nao prestador');
+      // console.tron.warn('Nao prestador');
+      toast.error('Esse usuário não é um prestador de serviços', {
+        position: 'top-center',
+        autoClose: 5000,
+      });
       return;
     }
 
@@ -26,6 +31,12 @@ export function* signIn({ payload }) {
 
     history.push('/dashboard');
   } catch (err) {
+    toast.error('Falha na autenticação, verifique seus dados!', {
+      position: 'top-center',
+      autoClose: 3000,
+      width: '500px',
+    });
+
     yield put(signFailure());
   }
 }

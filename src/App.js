@@ -1,4 +1,5 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify'; // notificacoes toast
 import { PersistGate } from 'redux-persist/integration/react'; // persist
 import { Provider } from 'react-redux'; // redux
 
@@ -22,6 +23,7 @@ function App() {
         <Router history={history}>
           <Routes />
           <GlobalStyle />
+          <ToastContainer />
         </Router>
       </PersistGate>
     </Provider>

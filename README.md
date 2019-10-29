@@ -87,3 +87,7 @@ Criar o arquivo _'jsconfig.json'_
 ## Persistindo autenticação:
 
 `yarn add redux-persist`
+
+## Notificações:
+
+`yarn add react-toastify`
