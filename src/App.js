@@ -1,6 +1,6 @@
 import React from 'react';
-// redux:
-import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react'; // persist
+import { Provider } from 'react-redux'; // redux
 
 import { Router } from 'react-router-dom';
 
@@ -10,17 +10,20 @@ import Routes from './routes';
 import history from './services/history';
 
 // store do Redux (após as configs do Reactotron)
-import store from './store';
+// import store from './store'; // antes do persist
+import { store, persistor } from './store'; // com o persist
 
 import GlobalStyle from './styles/global';
 
 function App() {
   return (
     <Provider store={store}>
-      <Router history={history}>
-        <Routes />
-        <GlobalStyle />
-      </Router>
+      <PersistGate persistor={persistor}>
+        <Router history={history}>
+          <Routes />
+          <GlobalStyle />
+        </Router>
+      </PersistGate>
     </Provider>
   );
 }

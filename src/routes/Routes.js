@@ -8,7 +8,8 @@ import AuthLayout from '~/pages/_layouts/auth';
 import DefaultLayout from '~/pages/_layouts/default';
 
 // Redux
-import store from '~/store';
+// import store from '~/store'; // antes do persist
+import { store } from '~/store'; // com o persist
 
 export default function RouteWrapper({
   // PROPRIEDADES: path, exact, component...

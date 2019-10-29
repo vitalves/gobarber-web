@@ -82,3 +82,8 @@ Criar o arquivo _'jsconfig.json'_
 ## Acessando a API com o Axios:
 
 `yarn add axios`
+
+
+## Persistindo autenticação:
+
+`yarn add redux-persist`
