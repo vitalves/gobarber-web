@@ -1,6 +1,6 @@
 import React from 'react';
 // redux:
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Link } from 'react-router-dom';
 
@@ -26,6 +26,7 @@ const schema = Yup.object().shape({
 
 export default function SignIn() {
   const dispatch = useDispatch();
+  const loading = useSelector(state => state.auth.loading);
 
   function handleSubmit({ email, password }) {
     // console.tron.log(data);
@@ -44,7 +45,7 @@ export default function SignIn() {
           id="pass"
           placeholder="Sua senha"
         />
-        <button type="submit">Acessar</button>
+        <button type="submit">{loading ? 'Carregando...' : 'Acessar'}</button>
         <Link to="/register">Criar conta gratuita</Link>
       </Form>
     </>
