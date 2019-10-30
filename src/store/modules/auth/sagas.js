@@ -27,6 +27,10 @@ export function* signIn({ payload }) {
       return;
     }
 
+    // Incluir o Token no header de aitorização do axios:
+    // api.defaults.headers['Authorization'] = `Bearer ${token}`;
+    api.defaults.headers.Authorization = `Bearer ${token}`;
+
     yield put(signInSuccess(token, user));
 
     history.push('/dashboard');
@@ -67,8 +71,20 @@ export function* signUp({ payload }) {
   }
 }
 
+// enviar o token de autenticação junto com a chamada (axios)
+export function setToken({ payload }) {
+  if (!payload) return;
+
+  const { token } = payload.auth;
+
+  if (token) {
+    api.defaults.headers.Authorization = `Bearer ${token}`;
+  }
+}
+
 // sempre que ouvir '@auth/SIGN_IN_REQUEST' chama a funcao signIn:
 export default all([
-  takeLatest('@auth/SIGN_IN_REQUEST', signIn),
-  takeLatest('@auth/SIGN_UP_REQUEST', signUp),
+  takeLatest('persist/REHYDRATE', setToken), // persitir o token no axios
+  takeLatest('@auth/SIGN_IN_REQUEST', signIn), // Login
+  takeLatest('@auth/SIGN_UP_REQUEST', signUp), // Criar conta
 ]);
