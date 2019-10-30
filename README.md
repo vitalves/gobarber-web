@@ -1,6 +1,6 @@
 # GoBarber
 
-## Configurações iniciais feitas com:**
+## Configurações iniciais feitas com:
 
 `yarn add eslint -D`
 `yarn eslint --init`
@@ -91,3 +91,18 @@ Criar o arquivo _'jsconfig.json'_
 ## Notificações:
 
 `yarn add react-toastify`
+
+## Ícones da aplicação:
+
+`yarn add react-icons`
+
+## Estilização do scroll das notificações:
+
+`yarn add react-perfect-scrollbar`
+
+_IMPORTA NO ESTILO GLOBAL:_
+
+```js
+import 'react-perfect-scrollbar/dist/css/styles.css';
+```
+

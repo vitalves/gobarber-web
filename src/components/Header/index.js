@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import { Container, Content, Profile } from './styles';
 
+import Notifications from '~/components/notifications';
+
 import logo from '~/assets/logo-purple.svg';
 
 export default function Header() {
@@ -16,6 +18,7 @@ export default function Header() {
           </Link>
         </nav>
         <aside>
+          <Notifications />
           <Profile>
             <div>
               <strong>Vital Alves</strong>
