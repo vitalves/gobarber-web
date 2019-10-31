@@ -106,3 +106,7 @@ _IMPORTA NO ESTILO GLOBAL:_
 import 'react-perfect-scrollbar/dist/css/styles.css';
 ```
 
+## Trabalhar com datas:
+
+`yarn add date-fns@next`
+

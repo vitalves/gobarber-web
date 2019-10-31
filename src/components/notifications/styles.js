@@ -10,7 +10,7 @@ export const Container = styled.div`
   position: relative;
 `;
 
-export const Badge = styled.div`
+export const Badge = styled.button`
   background: none;
   border: 0;
   position: relative;
@@ -40,6 +40,7 @@ export const NotificationList = styled.div`
   background: rgba(0, 0, 0, 0.6);
   border-radius: 4px;
   padding: 15px 5px;
+  display: ${props => (props.visible ? 'block' : 'none')};
 
   &::before {
     content: '';
@@ -74,18 +75,24 @@ export const Notification = styled.div`
   }
 
   time {
+    display: block;
     font-size: 12px;
     opacity: 0.6;
+    margin-bottom: 5px;
   }
 
   button {
     font-size: 12px;
     border: 0;
-    background: none;
+    background: rgba(113, 89, 193, 0.1);
     color: ${lighten(0.2, '#7159c1')};
-    padding: 0 5px;
-    margin: 0 5px;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1px 7px;
+    border-radius: 5px;
+    transition: background 0.2s;
+
+    &:hover {
+      background: rgba(113, 89, 193, 0.2);
+    }
   }
 
   ${props =>
@@ -98,6 +105,7 @@ export const Notification = styled.div`
         height: 8px;
         background: #ff892e;
         border-radius: 50%;
+        margin-left: 10px;
       }
     `}
 `;
