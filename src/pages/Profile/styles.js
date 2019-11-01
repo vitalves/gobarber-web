@@ -10,6 +10,13 @@ export const Container = styled.div`
     flex-direction: column;
     margin-top: 30px;
 
+    > p {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      color: #444;
+    }
+
     input {
       background: rgba(0, 0, 0, 0.1);
       margin: 0 0 10px;
@@ -22,14 +29,20 @@ export const Container = styled.div`
       &::placeholder {
         color: rgba(255, 255, 255, 0.7);
       }
+
+      &[type='checkbox'] {
+        width: 15px;
+        height: 15px;
+        margin-left: 5px;
+      }
     }
 
     hr {
       border: 0;
       height: 1px;
       width: 100%;
-      background: rgba(255, 255, 255, 0.2);
-      margin: 10px 0 20px;
+      background: rgba(255, 255, 255, 0.1);
+      margin: 5px 0 10px;
     }
 
     span {
@@ -69,7 +82,12 @@ export const Container = styled.div`
     transition: background 0.2s;
 
     &:hover {
-      background: ${darken(0.07, '#f64c75')};
+      background: ${darken(0.03, '#f64c75')};
     }
   }
+`;
+
+export const Teste = styled.div`
+  display: ${props => (props.isHidden ? 'none;' : 'flex')};
+  flex-direction: column;
 `;
