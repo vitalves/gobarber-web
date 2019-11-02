@@ -18,7 +18,6 @@ export default function user(state = INITIAL_STATE, action) {
         break;
       }
       default:
-        return state;
     } // end swith
   }); // end return
 }
