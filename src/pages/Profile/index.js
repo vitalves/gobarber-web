@@ -1,5 +1,4 @@
-import React from 'react';
-// import React, { useState } from 'react';
+import React, { useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -7,21 +6,22 @@ import { Form, Input } from '@rocketseat/unform';
 
 import { updateProfileRequest } from '~/store/modules/user/actions';
 
-import { Container } from './styles';
+import { Container, Teste } from './styles';
 
 export default function Profile() {
-  // const [isHidden, setIsHidden] = useState(true);
+  const [isHidden, setIsHidden] = useState(true);
   const dispatch = useDispatch();
   const profile = useSelector(state => state.user.profile);
 
   function handleSubmit(data) {
     // console.tron.log(data);
     dispatch(updateProfileRequest(data));
+    setIsHidden(true);
   }
-  /*
+
   function handleIsHidden() {
     setIsHidden(!isHidden);
-  } */
+  }
 
   return (
     <Container>
@@ -29,7 +29,7 @@ export default function Profile() {
         <Input type="text" name="name" id="name" placeholder="Nome completo" />
         <Input type="email" name="email" id="email" placeholder="Seu email" />
         <hr />
-        {/*
+
         <p>
           Alterar a senha:
           <input
@@ -38,28 +38,31 @@ export default function Profile() {
             checked={!isHidden}
             onChange={handleIsHidden}
           />
-        </p> <Teste isHidden={isHidden}>
-        */}
+        </p>
+
         <hr />
 
-        <Input
-          type="password"
-          name="oldPassword"
-          id="oldPassword"
-          placeholder="Sua senha atual"
-        />
-        <Input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Sua nova senha"
-        />
-        <Input
-          type="password"
-          name="confirmPassword"
-          id="confirmPassword"
-          placeholder="Confirme sua nova senha"
-        />
+        <Teste isHidden={isHidden}>
+          <Input
+            type="password"
+            name="oldPassword"
+            id="oldPassword"
+            placeholder="Sua senha atual"
+          />
+          <Input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Sua nova senha"
+          />
+          <Input
+            type="password"
+            name="confirmPassword"
+            id="confirmPassword"
+            placeholder="Confirme sua nova senha"
+          />
+        </Teste>
+
         <button type="submit"> Atualizar perfil </button>
       </Form>
 
