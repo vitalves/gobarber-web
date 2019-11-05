@@ -48,3 +48,4 @@ module.exports = {
 };
 
 // eslint-disable-line :: para desabilitar o eslint em uma linha
+// eslint-disable-next-line prefer-object-spread // desabilitar linha seguinte
