@@ -46,3 +46,5 @@ module.exports = {
     },
   },
 };
+
+// eslint-disable-line :: para desabilitar o eslint em uma linha

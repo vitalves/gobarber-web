@@ -14,19 +14,20 @@ export default function AvatarInput() {
   const ref = useRef();
 
   useEffect(() => {
+    // verifica se existe algo dentro da referencia
     if (ref.current) {
       registerField({
         name: 'avatar_id',
-        ref: ref.current,
-        path: 'dataset.file',
+        ref: ref.current, // input
+        path: 'dataset.file', // onde que ele vai buscar o valor do input
       });
     }
-  }, [ref, registerField]);
+  }, [ref.current]); // eslint-disable-line
 
   async function handleChange(e) {
-    const data = new FormData();
+    const data = new FormData(); // para o Multer conseguir recuperar
 
-    data.append('file', e.target.files[0]); // posição [0] para pega um apenas
+    data.append('file', e.target.files[0]);
 
     const response = await api.post('files', data);
 
@@ -43,7 +44,7 @@ export default function AvatarInput() {
           src={
             preview || 'https://api.adorable.io/avatars/50/abott@adorable.png'
           }
-          alt="foto"
+          alt=""
         />
 
         <input

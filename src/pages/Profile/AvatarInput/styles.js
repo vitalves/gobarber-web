@@ -9,6 +9,18 @@ export const Container = styled.div`
 
     &:hover {
       opacity: 0.7;
+
+      /*
+      &::after {
+        content: 'Editar foto';
+        position: absolute;
+        font-size: 12px;
+        background: rgba(111, 80, 173, 0.8);
+        padding: 1px 3px;
+        border-radius: 6px;
+        color: #eee;
+      }
+      */
     }
 
     img {
