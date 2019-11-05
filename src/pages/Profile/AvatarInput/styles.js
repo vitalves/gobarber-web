@@ -6,21 +6,23 @@ export const Container = styled.div`
 
   label {
     cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.3s;
 
     &:hover {
-      opacity: 0.7;
+      opacity: 0.8;
 
-      /*
       &::after {
-        content: 'Editar foto';
+        content: 'Alterar foto';
         position: absolute;
+        top: 160px;
+        left: calc(50% - 35px);
         font-size: 12px;
-        background: rgba(111, 80, 173, 0.8);
+        background: rgba(255, 255, 255, 0.6);
         padding: 1px 3px;
         border-radius: 6px;
-        color: #eee;
+        color: rgba(0, 0, 0, 0.4);
       }
-      */
     }
 
     img {
