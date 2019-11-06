@@ -82,9 +82,16 @@ export function setToken({ payload }) {
   }
 }
 
+export function signOut() {
+  toast.success('Você foi deslogado com  sucesso!');
+
+  history.push('/');
+}
+
 // sempre que ouvir '@auth/SIGN_IN_REQUEST' chama a funcao signIn:
 export default all([
   takeLatest('persist/REHYDRATE', setToken), // persitir o token no axios
   takeLatest('@auth/SIGN_IN_REQUEST', signIn), // Login
   takeLatest('@auth/SIGN_UP_REQUEST', signUp), // Criar conta
+  takeLatest('@auth/SIGN_OUT', signOut), // logout
 ]);
