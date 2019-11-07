@@ -110,3 +110,7 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 
 `yarn add date-fns@next`
 
+### Trabalhar com Timezone via date-fns
+
+`yarn add date-fns-tz`
+
