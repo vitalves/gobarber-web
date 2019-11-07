@@ -53,6 +53,7 @@ export default function Dashboard() {
           ),
         };
       });
+
       setSchedule(data);
     }
 
@@ -66,6 +67,8 @@ export default function Dashboard() {
   function handleNextDay() {
     setDate(addDays(date, 1));
   }
+
+  // console.log(schedule);
 
   return (
     <Container>
@@ -85,7 +88,9 @@ export default function Dashboard() {
         {schedule.map(time => (
           <Time key={time.time} past={time.past} available={!time.appointment}>
             <strong>{time.time}</strong>
-            <span>{time.appointment ? time.appointment : 'Em aberto'}</span>
+            <span>
+              {time.appointment ? time.appointment.user.name : 'Em aberto'}
+            </span>
           </Time>
         ))}
       </ul>
