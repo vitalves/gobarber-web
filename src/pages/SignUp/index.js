@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
@@ -28,6 +28,10 @@ const schema = Yup.object().shape({
 
 export default function SignUp() {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    document.title = 'GoBarber | Criar conta';
+  }, []);
 
   function handleSubmit({ name, email, password }) {
     // console.tron.log(data);
