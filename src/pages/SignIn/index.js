@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // redux:
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -27,6 +27,10 @@ const schema = Yup.object().shape({
 export default function SignIn() {
   const dispatch = useDispatch();
   const loading = useSelector(state => state.auth.loading);
+
+  useEffect(() => {
+    document.title = 'GoBarber | Login';
+  }, []);
 
   function handleSubmit({ email, password }) {
     // console.tron.log(data);

@@ -26,11 +26,16 @@ const range = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 export default function Dashboard() {
   const [schedule, setSchedule] = useState([]);
   const [date, setDate] = useState(new Date());
+  const [title, setTitle] = useState('GoBoarber | Dashboard');
 
   const dateFormatted = useMemo(
     () => format(date, "d 'de' MMMM", { locale: pt }),
     [date]
   );
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
   useEffect(() => {
     async function loadSchedule() {
@@ -56,16 +61,17 @@ export default function Dashboard() {
 
       setSchedule(data);
     }
-
     loadSchedule();
   }, [date]);
 
   function handlePrevDay() {
     setDate(subDays(date, 1));
+    setTitle(format(subDays(date, 1), "d 'de' MMMM", { locale: pt }));
   }
 
   function handleNextDay() {
     setDate(addDays(date, 1));
+    setTitle(format(addDays(date, 1), "d 'de' MMMM", { locale: pt }));
   }
 
   // console.log(schedule);

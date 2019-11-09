@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -15,6 +15,10 @@ export default function Profile() {
   const [isHidden, setIsHidden] = useState(true);
   const dispatch = useDispatch();
   const profile = useSelector(state => state.user.profile);
+
+  useEffect(() => {
+    document.title = 'GoBarber | Meu Perfil';
+  }, []);
 
   function handleSubmit(data) {
     // console.tron.log(data);
