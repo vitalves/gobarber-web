@@ -1,5 +1,9 @@
 # GoBarber
 
+_BACKEND_
+
+https://github.com/vitalves/Rocketseat-bootcamp-modulo02
+
 ## Configurações iniciais feitas com:
 
 `yarn add eslint -D`
